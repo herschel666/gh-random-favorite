@@ -49,6 +49,12 @@
         });
       });
 
+      describe('`htmlEscape`', function () {
+        it('should escape html-tags', function () {
+          expect(htmlEscape('<p>Foo</p>')).to.equal('&lt;p&gt;Foo&lt;/p&gt;');
+        });
+      });
+
       describe('`fetch`', function () {
         var xhr, requests = [];
         beforeEach(function () {

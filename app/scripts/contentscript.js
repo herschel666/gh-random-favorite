@@ -69,6 +69,16 @@ function tmpl(str, obj) {
 }
 
 /**
+ * Escapes HTML tags in a given string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function htmlEscape(str) {
+  return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/**
  * Fetches async data; has an eye on the GitHub-
  * API-limit.
  *
@@ -190,6 +200,7 @@ function appendFav(fav) {
       content;
 
   fav.user = fav.owner.login;
+  fav.description = htmlEscape(fav.description);
   content = tmpl(tmplStr, fav);
   favorite.className = 'gh-random-favorite box box-small';
   favorite.innerHTML = content;
