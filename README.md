@@ -1,7 +1,7 @@
 GH-Random-Favorite
 ====
 
-This is a Chrome-extension that displays one of your starred repos in the sidebar of that GitHub.com frontpage, when you're logged in. If you found a bug, [file an issue](https://github.com/herschel666/gh-random-favorite/issues). Thanks!
+This is a Chrome-extension that displays one of your starred repos in the sidebar of the GitHub.com frontpage, when you're logged in. [You can download it at the Chrome Web Store](https://chrome.google.com/webstore/detail/gh-random-favorite/ogmnlelgbkfjjjhmhefdlfblpdiopedb). If you found a bug, [file an issue](https://github.com/herschel666/gh-random-favorite/issues). Thanks!
 
 ![image](./app/images/icon-128.png)
 
