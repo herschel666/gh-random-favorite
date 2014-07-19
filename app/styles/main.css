@@ -1,0 +1,30 @@
+
+.gh-random-favorite__sub-heading {
+  margin: .3333em 0; /* ~5/15 */
+  font-size: 1.1818em; /* ~15/13 */
+}
+
+.gh-random-favorite__sub-heading i {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.gh-random-favorite .starred-repo:last-child {
+  padding-top: 5px;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.gh-random-favorite .starred-repo .starring-container {
+  margin-left: -20px;
+  float: left;
+}
+
+.gh-random-favorite .starred-repo .mega-octicon {
+  margin-top: 6px;
+  font-size: 16px;
+  color: #555;
+}
+
+.gh-random-favorite .starred-repo .description {
+  margin-bottom: 5px;
+}

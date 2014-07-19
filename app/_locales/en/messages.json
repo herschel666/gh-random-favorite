@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "GH Random Favorite",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Shows a random favorite repo in the sidebar.",
+    "description": "The description of the application"
+  }
+}
