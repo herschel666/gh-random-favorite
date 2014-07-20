@@ -18,6 +18,7 @@
                 "styles/main.css"
             ],
             "js": [
+                "bower_components/mersennetwister/src/MersenneTwister.js",
                 "scripts/contentscript.js"
             ],
             "run_at": "document_end",

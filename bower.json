@@ -1,6 +1,8 @@
 {
   "name": "gh-random-favorite",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "mersennetwister": "~0.2.0"
+  },
   "devDependencies": {}
 }

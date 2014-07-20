@@ -13,6 +13,8 @@ var metaLogin = document.querySelector('[name="octolytics-actor-login"]'),
     userName,
     favsUrl;
 
+var mersenne = new MersenneTwister();
+
 /**
  * Template of the displayed favorite.
  *
@@ -131,7 +133,7 @@ function getLastPage(str) {
  * @return {number}          Random page
  */
 function getRandomPage(lastPage) {
-  return Math.ceil(Math.random() * lastPage);
+  return Math.ceil(mersenne.random() * lastPage);
 }
 
 /**
@@ -142,7 +144,7 @@ function getRandomPage(lastPage) {
  * @return {object}      Random repo
  */
 function getRandomFav(favs) {
-  var index = Math.floor(Math.random() * favs.length);
+  var index = Math.floor(mersenne.random() * favs.length);
   return favs[index];
 }
 
