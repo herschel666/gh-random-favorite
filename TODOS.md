@@ -1,3 +1,3 @@
 - [x] change project name in gruntfile
-- [ ] include mersenne-twister
+- [x] include mersenne-twister
 - [x] html-escape repo-discription
