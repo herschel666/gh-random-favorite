@@ -56,28 +56,21 @@ function formatHeaderData(str) {
 }
 
 /**
- * Tiny templating
- * (http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/)
+ * Simple templating
  *
  * @param  {string} str Template string
  * @param  {object} obj Data object
  * @return {string}     Rendered template
  */
 function tmpl(str, obj) {
+  var tmp;
   for ( var j in  obj ) {
-    str = str.replace(new RegExp('{{' + j + '}}', 'g'), obj[j]);
+    if ( typeof obj[j] === 'string' ) {
+      tmp = obj[j].replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      str = str.replace(new RegExp('{{' + j + '}}', 'g'), tmp);
+    }
   }
   return str;
-}
-
-/**
- * Escapes HTML tags in a given string.
- *
- * @param  {string} str
- * @return {string}
- */
-function htmlEscape(str) {
-  return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 /**
@@ -202,7 +195,6 @@ function appendFav(fav) {
       content;
 
   fav.user = fav.owner.login;
-  fav.description = htmlEscape(fav.description);
   content = tmpl(tmplStr, fav);
   favorite.className = 'gh-random-favorite box box-small';
   favorite.innerHTML = content;

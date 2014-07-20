@@ -47,11 +47,17 @@
           foo.innerHTML = tmpl('<p>{{foo}}</p>', {foo: 'bar'});
           expect(foo.querySelector('p').textContent).to.equal('bar');
         });
-      });
-
-      describe('`htmlEscape`', function () {
-        it('should escape html-tags', function () {
-          expect(htmlEscape('<p>Foo</p>')).to.equal('&lt;p&gt;Foo&lt;/p&gt;');
+        it('should escape html', function () {
+          var foo = document.createElement('foo');
+          foo.innerHTML = tmpl('<p>{{foo}}</p>', {foo: '<span>bar</span>'});
+          expect(foo.querySelector('p').textContent).to.equal('<span>bar</span>');
+        });
+        it('should ignore nested objects', function () {
+          var foo = document.createElement('foo'),
+              nested = function () {
+                foo.innerHTML = tmpl('<p>{{foo}}</p>', {foo: '<span>bar</span>', bar: {lorem: 'ipsum'}});
+              };
+          expect(nested).not.to.throw();
         });
       });
 
