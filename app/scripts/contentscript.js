@@ -42,15 +42,19 @@ function formatHeaderData(str) {
   var rows = str.split(/\r\n/),
       ret = {};
   rows.forEach(function (row) {
-    var tmp = row.split(/\:\s*?/);
-    if ( !tmp[0] ) {
+    var index = row.indexOf(':'),
+        prop,
+        val;
+    if ( index < 0 ) {
       return;
     }
-    if ( tmp[0] === 'Date' || tmp[0] === 'Last-Modified' ) {
-      ret[tmp[0]] = new Date(tmp[1].trim());
+    prop = row.slice(0, index);
+    val = row.slice(index + 1);
+    if ( prop === 'Date' || prop === 'Last-Modified' ) {
+      ret[prop] = new Date(val.trim());
       return;
     }
-    ret[tmp[0]] = tmp[1].trim();
+    ret[prop] = val.trim();
   });
   return ret;
 }

@@ -108,9 +108,9 @@
       });
 
       describe('`getLastPage`', function () {
-        var headerLink = '<https://api.github.com/user/123/starred?page=2>; rel="next", <https://api.github.com/user/123/starred?page=12>; rel="last"';
+        var headerLink = '<https://api.github.com/user/520258/starred?page=2>; rel="next", <https://api.github.com/user/520258/starred?page=10>; rel="last"';
         it('should return the last page', function () {
-          expect(getLastPage(headerLink)).to.equal(12);
+          expect(getLastPage(headerLink)).to.equal(10);
         });
       });
 
