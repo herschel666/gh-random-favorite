@@ -20,15 +20,11 @@ var mersenne = new MersenneTwister();
  *
  * @type {string}
  */
-var tmplStr = '<div class="box-header">' +
-  '<h3 class="gh-random-favorite__heading box-title">From your favorites</h3>' +
-'</div>' +
-'<div class="box-body starred-repo public source">' +
-  '<span class="mega-octicon octicon-repo"></span>' +
-  '<span class="starring-container">' +
-    '<h4 class="gh-random-favorite__sub-heading"><a href="{{html_url}}" class="js-navigation-open"><i>{{user}}</i>/{{name}}</a></h4>' +
-    '<p class="description">{{description}}</p>' +
-  '</span>' +
+var tmplStr = '<h3 class="gh-random-favorite__heading">From your favorites</h3>' +
+'<div class="gh-random-favorite__content">' +
+  '<span class="gh-random-favorite__icon mega-octicon octicon-repo"></span>' +
+  '<h4 class="gh-random-favorite__sub-heading"><a href="{{html_url}}" class="js-navigation-open"><i>{{user}}</i>/{{name}}</a></h4>' +
+  '<p class="gh-random-favorite__description">{{description}}</p>' +
 '</div>';
 
 /**
@@ -200,7 +196,7 @@ function appendFav(fav) {
 
   fav.user = fav.owner.login;
   content = tmpl(tmplStr, fav);
-  favorite.className = 'gh-random-favorite box box-small';
+  favorite.className = 'gh-random-favorite';
   favorite.innerHTML = content;
   sidebar.insertBefore(favorite, sidebar.firstElementChild);
 
